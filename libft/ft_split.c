@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 12:51:00 by yiwama            #+#    #+#             */
-/*   Updated: 2023/09/26 14:54:55 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/10/04 11:06:09 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ static char	**set_splitted(char **splitted, char const *str, char c)
 			splitted[index] = my_strndup(&str[start], i + 1 - start);
 			if (!splitted[index++])
 			{
-				while (index >= 0)
+				while (index > 0)
 					free(splitted[--index]);
 				return (NULL);
 			}

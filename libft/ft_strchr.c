@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:10:32 by yiwama            #+#    #+#             */
-/*   Updated: 2023/09/25 13:31:00 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/10/04 13:43:36 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,17 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-// #include <stdio.h>
-// #include <string.h>
-// int	main(void)
-// {
-// 	char	str0[] = "abcdefabcdef";
-// 	printf("%p\n", strchr(str0, 'e'));
-// 	printf("%p\n", ft_strchr(str0, 'e'));
+#include <stdio.h>
+#include <string.h>
+int	main(void)
+{
+	char	str0[] = "abcdefabcdef";
+	printf("%p\n", strchr(str0, 'e'));
+	printf("%p\n", ft_strchr(str0, 'e'));
 
-// 	printf("%p\n", strchr(str0, '\0'));
-// 	printf("%p\n", ft_strchr(str0, '\0'));
-// }
+	printf("%p\n", strchr(str0, '\0'));
+	printf("%p\n", ft_strchr(str0, '\0'));
+
+	printf("%p\n", strchr(str0, 1000));
+	printf("%p\n", ft_strchr(str0, 1000));
+}

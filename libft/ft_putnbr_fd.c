@@ -6,11 +6,11 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:48:19 by yiwama            #+#    #+#             */
-/*   Updated: 2023/09/26 19:53:24 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/10/04 12:46:34 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "linft.h"
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -21,12 +21,12 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 0)
 	{
-		ft_putchar_fd("-", fd);
+		ft_putchar_fd('-', fd);
 		n *= -1;
 	}
 	if (n / 10 != 0)
-		ft_putnbr_fd(n / 10);
-	ft_putchar_fd(n % 10 + '0');
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd(n % 10 + '0', fd);
 }
 
 // #include <fcntl.h>
