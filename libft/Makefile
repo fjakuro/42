@@ -6,16 +6,22 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strle
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
 		ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+
+ifdef WITH_BONUS
+SRCS += $(BONUS_SRCS)
+endif
+
 OBJS =$(SRCS:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 
 $(NAME): $(OBJS)
-	ar rs $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
 	cc -c $(CFLAGS) $< -o $@
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
 
 all: $(NAME)
 
@@ -26,3 +32,7 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+bonus:
+	make re WITH_BONUS=1
+	
