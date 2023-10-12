@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:45:13 by yiwama            #+#    #+#             */
-/*   Updated: 2023/10/13 00:02:15 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/10/13 00:26:40 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	size_t			i;
 	unsigned char	*str;
 
+	if (!s)
+		return (NULL);
 	str = (unsigned char *)s;
 	i = 0;
-	while (str[i] && i < n)
+	while (i < n)
 	{
-		if (str[i] == c)
+		if (str[i] == (unsigned char)c)
 			return ((void *)&str[i]);
 		i++;
 	}
-	if (i < n && str[i] == c)
-		return ((void *)&str[i]);
-	return (0);
+	return (NULL);
 }
 
 // #include <stdio.h>
@@ -45,9 +45,12 @@ void	*ft_memchr(const void *s, int c, size_t n)
 // 	printf("%p, %s\n", ft_memchr(str0, '\0', 20), (unsigned char *)ft_memchr(str0, '\0', 20));
 
 // 	char	test[] = {0, 1, 2, 3, 4, 5};
-// 	// printf("%p\n", memchr(test, 0, 0));
-// 	// printf("%p\n", ft_memchr(test, 0, 0));
+// 	printf("%p\n", memchr(test, 0, 0));
+// 	printf("%p\n", ft_memchr(test, 0, 0));
 
 // 	printf("%p\n", memchr(test, 2, 3));
 // 	printf("%p\n", ft_memchr(test, 2, 3));
+
+// 	printf("%p\n", memchr(test, 2 + 256, 3));
+// 	printf("%p\n", ft_memchr(test, 2 + 256, 3));
 // }

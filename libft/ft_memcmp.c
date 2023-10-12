@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:57:26 by yiwama            #+#    #+#             */
-/*   Updated: 2023/09/25 14:04:49 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/10/13 01:17:11 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,17 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*str1;
 	unsigned char	*str2;
 
+	if (n == 0)
+		return (0);
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
 	i = 0;
-	while (str1[i] && str2[i] && i < n)
-	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+	while (str1[i] == str2[i] && i < n)
 		i++;
-	}
-	if (str1[i] != str2[i])
-		return (str1[i] - str2[i]);
-	return (0);
+	if (i == n)
+		return (0);
+	else
+		return ((int)(str1[i] - str2[i]));
 }
 
 // #include <stdio.h>
@@ -40,13 +39,23 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 // 	char	str1[] = "abcDEF";
 // 	char	str2[] = "abc";
 // 	char	str3[] = "";
+// 	char	str4[] = "abcdef";
+
+// 	printf("%d\n", memcmp(str0, str4, 7));
+// 	printf("%d\n", ft_memcmp(str0, str4, 7));
 
 // 	printf("%d\n", memcmp(str0, str1, 6));
 // 	printf("%d\n", ft_memcmp(str0, str1, 6));
+
+// 	printf("%d\n", memcmp(str1, str0, 6));
+// 	printf("%d\n", ft_memcmp(str1, str0, 6));
 
 // 	printf("%d\n", memcmp(str0, str2, 6));
 // 	printf("%d\n", ft_memcmp(str0, str2, 6));
 
 // 	printf("%d\n", memcmp(str0, str3, 6));
 // 	printf("%d\n", ft_memcmp(str0, str3, 6));
+
+// 	printf("%d\n", memcmp(str0, str3, 0));
+// 	printf("%d\n", ft_memcmp(str0, str3, 0));
 // }
