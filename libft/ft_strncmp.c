@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:27:54 by yiwama            #+#    #+#             */
-/*   Updated: 2023/09/26 12:03:27 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/10/14 12:52:31 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
+	if (n == 0)
+		return (0);
 	i = 0;
-	while (s1[i] && s2[i] && i < n)
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+	while (s1[i] == s2[i] && i < n - 1)
 		i++;
-	}
 	return (s1[i] - s2[i]);
 }
 
@@ -38,9 +36,15 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 // 	printf("%d\n", strncmp(s0, s1, 6));
 // 	printf("%d\n", ft_strncmp(s0, s1, 6));
 
+// 	printf("%d\n", strncmp(s0, s1, 3));
+// 	printf("%d\n", ft_strncmp(s0, s1, 3));
+
 // 	printf("%d\n", strncmp(s0, s2, 6));
 // 	printf("%d\n", ft_strncmp(s0, s2, 6));
 
 // 	printf("%d\n", strncmp(s0, s3, 6));
 // 	printf("%d\n", ft_strncmp(s0, s3, 6));
+
+// 	printf("%d\n", strncmp(s0, s3, 0));
+// 	printf("%d\n", ft_strncmp(s0, s3, 0));
 // }

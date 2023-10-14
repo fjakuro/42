@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 00:01:03 by yiwama            #+#    #+#             */
-/*   Updated: 2023/10/13 00:01:06 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/10/14 12:28:51 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,12 @@ char	*ft_strchr(const char *s, int c)
 	size_t	i;
 
 	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
+	while (s[i] && s[i] != (char)c)
 		i++;
-	}
-	if (s[i] == c)
+	if (s[i] == (char)c)
 		return ((char *)&s[i]);
-	return (0);
+	else
+		return (NULL);
 }
 
 // #include <stdio.h>
@@ -33,12 +30,12 @@ char	*ft_strchr(const char *s, int c)
 // int	main(void)
 // {
 // 	char	str0[] = "abcdefabcdef";
-// 	printf("%p\n", strchr(str0, 'e'));
-// 	printf("%p\n", ft_strchr(str0, 'e'));
+// 	printf("%s\n", strchr(str0, 'e'));
+// 	printf("%s\n", ft_strchr(str0, 'e'));
 
 // 	printf("%p\n", strchr(str0, '\0'));
 // 	printf("%p\n", ft_strchr(str0, '\0'));
 
-// 	printf("%p\n", strchr(str0, 1000));
-// 	printf("%p\n", ft_strchr(str0, 1000));
+// 	printf("%s\n", strchr(str0, 'f' + 256));
+// 	printf("%s\n", ft_strchr(str0, 'f' + 256));
 // }

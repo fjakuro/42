@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:21:52 by yiwama            #+#    #+#             */
-/*   Updated: 2023/09/25 13:30:34 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/10/14 12:41:10 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,16 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			p = (char *)&s[i];
 		i++;
 	}
-	if (s[i] == c)
+	if (c == '\0')
 		p = (char *)&s[i];
-	return (p);
+	if (p == 0)
+		return (NULL);
+	else
+		return (p);
 }
 
 // #include <stdio.h>
@@ -35,9 +38,12 @@ char	*ft_strrchr(const char *s, int c)
 // int	main(void)
 // {
 // 	char	str0[] = "abcdefabcdef";
-// 	printf("%p\n", strrchr(str0, 'e'));
-// 	printf("%p\n", ft_strrchr(str0, 'e'));
+// 	printf("%s\n", strrchr(str0, 'e'));
+// 	printf("%s\n", ft_strrchr(str0, 'e'));
 
 // 	printf("%p\n", strrchr(str0, '\0'));
 // 	printf("%p\n", ft_strrchr(str0, '\0'));
+
+// 	printf("%s\n", strrchr(str0, 'f' + 256));
+// 	printf("%s\n", ft_strrchr(str0, 'f' + 256));
 // }
