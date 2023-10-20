@@ -16,14 +16,14 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	if (lst && new)
 	{
-		if (!*lst)
+		if (*lst)
 			ft_lstlast(*lst)->next = new;
 		else
 			*lst = new;
 	}
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	t_list	*lst0 = ft_lstnew("abcde");

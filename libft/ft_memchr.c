@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:45:13 by yiwama            #+#    #+#             */
-/*   Updated: 2023/10/13 00:26:40 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/10/13 00:38:17 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	size_t			i;
 	unsigned char	*str;
 
-	if (!s)
-		return (NULL);
 	str = (unsigned char *)s;
 	i = 0;
 	while (i < n)
@@ -53,4 +51,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 // 	printf("%p\n", memchr(test, 2 + 256, 3));
 // 	printf("%p\n", ft_memchr(test, 2 + 256, 3));
+
+// 	char	*test_null = NULL;
+// 	// printf("%p\n", memchr(test_null, 2 + 256, 3));
+// 	printf("%p\n", ft_memchr(test_null, 2 + 256, 3));
 // }
