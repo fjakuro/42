@@ -13,7 +13,7 @@
 int	ft_isprint(int c)
 {
 	if (c >= ' ' && c <= '~')
-		return (c);
+		return (1);
 	else
 		return (0);
 }
@@ -28,6 +28,15 @@ int	ft_isprint(int c)
 // 	printf("%d\n", isprint('a'));
 // 	printf("%d\n", ft_isprint('a'));
 
-// 	printf("%d\n", isprint(200));
-// 	printf("%d\n", ft_isprint(200));
+// 	printf("%d\n", isprint(';'));
+// 	printf("%d\n", ft_isprint(';'));
+
+// 	printf("%d\n", isprint(0));
+// 	printf("%d\n", ft_isprint(0));
+
+// 	printf("%d\n", isprint(300));
+// 	printf("%d\n", ft_isprint(300));
+
+// 	printf("%d\n", isprint(-1));
+// 	printf("%d\n", ft_isprint(-1));
 // }

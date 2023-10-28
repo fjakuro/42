@@ -28,6 +28,12 @@ int	ft_isascii(int c)
 // 	printf("%d\n", isascii('a'));
 // 	printf("%d\n", ft_isascii('a'));
 
-// 	printf("%d\n", isascii(200));
-// 	printf("%d\n", ft_isascii(200));
+// 	printf("%d\n", isascii(0));
+// 	printf("%d\n", ft_isascii(0));
+
+// 	printf("%d\n", isascii(300));
+// 	printf("%d\n", ft_isascii(300));
+
+// 	printf("%d\n", isascii(-1));
+// 	printf("%d\n", ft_isascii(-1));
 // }

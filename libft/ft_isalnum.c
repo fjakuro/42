@@ -29,4 +29,13 @@ int	ft_isalnum(int c)
 
 // 	printf("%d\n", isalnum(':'));
 //     printf("%d\n", ft_isalnum(':'));
+
+// 	printf("%d\n", isalnum(0));
+//     printf("%d\n", ft_isalnum(0));
+
+// 	printf("%d\n", isalnum(300));
+//     printf("%d\n", ft_isalnum(300));
+
+// 	printf("%d\n", isalnum(-1));
+//     printf("%d\n", ft_isalnum(-1));
 // }

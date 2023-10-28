@@ -13,7 +13,7 @@
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-		return (c);
+		return (1);
 	else
 		return (0);
 }
@@ -23,8 +23,17 @@ int	ft_isdigit(int c)
 // int main(void)
 // {
 // 	printf("%d\n", isdigit('0'));
-//  printf("%d\n", ft_isdigit('0'));
+// 	printf("%d\n", ft_isdigit('0'));
 
 // 	printf("%d\n", isdigit('a'));
-//  printf("%d\n", ft_isdigit('a'));
+//  	printf("%d\n", ft_isdigit('a'));
+
+// 	printf("%d\n", isdigit(0));
+//  	printf("%d\n", ft_isdigit(0));
+
+// 	printf("%d\n", isdigit(300));
+//  	printf("%d\n", ft_isdigit(300));
+
+// 	printf("%d\n", isdigit(-1));
+//  	printf("%d\n", ft_isdigit(-1));
 // }
