@@ -9,11 +9,13 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strle
 BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 				ft_lstdelone.c ft_lstclear.c
 
+OBJS = $(SRCS:.c=.o)
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+
 ifdef WITH_BONUS
-SRCS += $(BONUS_SRCS)
+OBJS += $(BONUS_OBJS)
 endif
 
-OBJS =$(SRCS:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 
 $(NAME): $(OBJS)
@@ -28,6 +30,7 @@ all: $(NAME)
 
 clean:
 	rm -f $(OBJS)
+	rm -f $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)
@@ -36,4 +39,7 @@ re: fclean all
 
 bonus:
 	make re WITH_BONUS=1
-	
+
+so:
+	cc -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
