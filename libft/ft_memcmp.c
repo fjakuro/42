@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:57:26 by yiwama            #+#    #+#             */
-/*   Updated: 2023/10/13 01:17:11 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/03 20:35:49 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
 	i = 0;
-	while (str1[i] == str2[i] && i < n)
+	while (i < n && str1[i] == str2[i])
 		i++;
 	if (i == n)
 		return (0);
@@ -58,4 +58,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 // 	printf("%d\n", memcmp(str0, str3, 0));
 // 	printf("%d\n", ft_memcmp(str0, str3, 0));
+
+// 	// printf("%d\n", memcmp(str0, NULL, 2));
+// 	// printf("%d\n", ft_memcmp(str0, NULL, 2));
+
+// 	// printf("%d\n", memcmp(NULL, NULL, 0));
+// 	// printf("%d\n", ft_memcmp(NULL, NULL, 0));
 // }

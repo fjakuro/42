@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:20:05 by yiwama            #+#    #+#             */
-/*   Updated: 2023/10/28 14:25:33 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/12 00:22:59 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			alloc_size;
 
 	if (count && size > SIZE_MAX / count)
-		// return (NULL);
 		alloc_size = SIZE_MAX;
 	else
 		alloc_size = count * size;

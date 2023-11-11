@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 17:31:16 by yiwama            #+#    #+#             */
-/*   Updated: 2023/09/26 19:38:08 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/11 16:16:38 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	if (s)
+		write(fd, s, ft_strlen(s));
 }
 
 // #include <fcntl.h>
+// #include <sys/stat.h>
 // int	main(void)
 // {
 // 	ft_putstr_fd("abcdef", 1);
@@ -37,5 +39,8 @@ void	ft_putstr_fd(char *s, int fd)
 // 		ft_putstr_fd(str, 1);
 // 	free(str);
 // 	close(fd);
+// 	write(1, "\n", 1);
+
+// 	ft_putstr_fd(NULL, 1);
 // 	write(1, "\n", 1);
 // }

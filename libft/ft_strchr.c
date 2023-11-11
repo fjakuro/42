@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 00:01:03 by yiwama            #+#    #+#             */
-/*   Updated: 2023/10/14 12:31:21 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/12 00:24:20 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,7 @@ char	*ft_strchr(const char *s, int c)
 
 // 	printf("%s\n", strchr(str0, 'f' + 256));
 // 	printf("%s\n", ft_strchr(str0, 'f' + 256));
+
+// 	// printf("%s\n", strchr(NULL, 'f' 'e'));
+// 	// printf("%s\n", ft_strchr(NULL, 'f' + 'e'));
 // }

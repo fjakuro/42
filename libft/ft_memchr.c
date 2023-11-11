@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:45:13 by yiwama            #+#    #+#             */
-/*   Updated: 2023/10/13 00:38:17 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/12 00:30:20 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,20 @@ void	*ft_memchr(const void *s, int c, size_t n)
 // int	main(void)
 // {
 // 	char	str0[] = "abcdefabcdef";
-// 	printf("%p, %s\n", memchr(str0, 'e', 20), (char *)memchr(str0, 'e', 20));
-// 	printf("%p, %s\n", ft_memchr(str0, 'e', 20), (char *)ft_memchr(str0, 'e', 20));
+// 	printf("%p, ", memchr(str0, 'e', 20));
+// 	printf("%s\n", (char *)memchr(str0, 'e', 20));
+// 	printf("%p, ", ft_memchr(str0, 'e', 20));
+// 	printf("%s\n", (char *)ft_memchr(str0, 'e', 20));
 
-// 	printf("%p, %s\n", memchr(str0, 'e', 3), (unsigned char *)memchr(str0, 'e', 3));
-// 	printf("%p, %s\n", ft_memchr(str0, 'e', 3), (unsigned char *)ft_memchr(str0, 'e', 3));
+// 	printf("%p, ", memchr(str0, 'e', 3));
+// 	printf("%s\n", (unsigned char *)memchr(str0, 'e', 3));
+// 	printf("%p, ", ft_memchr(str0, 'e', 3));
+// 	printf("%s\n", (unsigned char *)ft_memchr(str0, 'e', 3));
 
-// 	printf("%p, %s\n", memchr(str0, '\0', 20), (unsigned char *)memchr(str0, '\0', 20));
-// 	printf("%p, %s\n", ft_memchr(str0, '\0', 20), (unsigned char *)ft_memchr(str0, '\0', 20));
+// 	printf("%p, ", memchr(str0, '\0', 20));
+// 	printf("%s\n", (unsigned char *)memchr(str0, '\0', 20));
+// 	printf("%p, ", ft_memchr(str0, '\0', 20));
+// 	printf("%s\n", (unsigned char *)ft_memchr(str0, '\0', 20));
 
 // 	char	test[] = {0, 1, 2, 3, 4, 5};
 // 	printf("%p\n", memchr(test, 0, 0));

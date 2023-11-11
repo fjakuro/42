@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:29:53 by yiwama            #+#    #+#             */
-/*   Updated: 2023/09/26 12:03:57 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/11 13:41:07 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substring;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
 	if (start + len > ft_strlen(s))
@@ -49,9 +51,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 // 	char	*str2;
 // 	str2 = ft_substr("abcdef", 7, 0);
-// 	printf("%d\n", ft_strncmp("", "", 1));
-// 	printf("%s\n", str2);
+// 	printf("%s: ", str2);
+// 	printf("%d\n", ft_strncmp(str2, "", 1));
 // 	free(str2);
 
-// 	// system("leaks -q a.out");
+// 	char	*str3;
+// 	str3 = ft_substr(NULL, 2, 7);
+// 	printf("%p\n", str3);
+// 	free(str3);
+
+// 	system("leaks -q a.out");
 // }

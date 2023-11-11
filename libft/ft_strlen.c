@@ -32,6 +32,6 @@ size_t	ft_strlen(const char *s)
 // 	printf("%lu\n", strlen(""));
 //     printf("%lu\n", ft_strlen(""));
 
-// 	printf("%lu\n", strlen(NULL));
-//     // printf("%lu\n", ft_strlen(NULL));
+// 	// printf("%lu\n", strlen(NULL));
+//     // // printf("%lu\n", ft_strlen(NULL));
 // }

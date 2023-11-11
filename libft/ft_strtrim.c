@@ -6,55 +6,28 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 12:06:05 by yiwama            #+#    #+#             */
-/*   Updated: 2023/09/26 12:56:55 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/11 15:58:26 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	isin(char c, char const *set);
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*trimmed;
-	size_t	i;
-	size_t	len;
+	size_t	head;
+	size_t	tail;
 
-	len = 0;
-	i = 0;
-	while (s1[i])
-	{
-		if (!isin(s1[i], set))
-			len++;
-		i++;
-	}
-	trimmed = (char *)malloc(sizeof(char) * len + 1);
-	if (!trimmed)
+	if (!s1)
 		return (NULL);
-	len = 0;
-	i = 0;
-	while (s1[i])
-	{
-		if (!isin(s1[i], set))
-			trimmed[len++] = s1[i];
-		i++;
-	}
-	trimmed[len] = '\0';
-	return (trimmed);
-}
-
-static int	isin(char c, char const *set)
-{
-	size_t	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (c == set[i])
-			return (1);
-		i++;
-	}
-	return (0);
+	head = 0;
+	tail = ft_strlen(s1);
+	while (s1[head] && ft_strchr(set, s1[head]))
+		head++;
+	while (s1[tail - 1] && ft_strchr(set, s1[tail - 1]))
+		tail--;
+	if (head > tail)
+		head = 0;
+	return (ft_substr(s1, head, tail - head));
 }
 
 // #include <stdio.h>
@@ -67,14 +40,32 @@ static int	isin(char c, char const *set)
 // 	free(trim0);
 
 // 	char	*str1 = "1234AAA22331122";
-// 	char	*set1 = "";
+// 	char	*set1 = "A";
 // 	char	*trim1 = ft_strtrim(str1, set1);
 // 	printf("%s\n", trim1);
 // 	free(trim1);
 
-// 	char	*str2 = "";
-// 	char	*set2 = "1234";
-// 	char	*trim2 = ft_strtrim(str2, set2);
-// 	printf("%s\n", trim2);
-// 	free(trim2);
+// 	char	*str3 = "1234AAA22331122";
+// 	char	*set3 = "";
+// 	char	*trim3 = ft_strtrim(str3, set3);
+// 	printf("%s\n", trim3);
+// 	free(trim3);
+
+// 	char	*str4 = "";
+// 	char	*set4 = "1234";
+// 	char	*trim4 = ft_strtrim(str4, set4);
+// 	printf("%s\n", trim4);
+// 	free(trim4);
+
+// 	char	*str5 = "";
+// 	char	*set5 = "";
+// 	char	*trim5 = ft_strtrim(str5, set5);
+// 	printf("%s\n", trim5);
+// 	free(trim5);
+
+// 	char	*str6 = "1234AAA22331122";
+// 	char	*set6 = "1234A";
+// 	char	*trim6 = ft_strtrim(str6, set6);
+// 	printf("%s\n", trim6);
+// 	free(trim6);
 // }

@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:40:33 by yiwama            #+#    #+#             */
-/*   Updated: 2023/09/26 19:45:52 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/11 16:19:00 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	ft_putendl_fd(char *s, int fd)
 }
 
 // #include <fcntl.h>
+// #include <sys/stat.h>
 // int	main(void)
 // {
 // 	ft_putendl_fd("abcdef", 1);
-// 	// write(1, "\n", 1);
 
 // 	int	fd = open("./test.txt", O_RDWR | O_CREAT, S_IWRITE | S_IREAD);
 // 	if (fd < 0)
@@ -38,5 +38,6 @@ void	ft_putendl_fd(char *s, int fd)
 // 		ft_putendl_fd(str, 1);
 // 	free(str);
 // 	close(fd);
-// 	// write(1, "\n", 1);
+
+// 	ft_putendl_fd(NULL, 1);
 // }

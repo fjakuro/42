@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 17:34:10 by yiwama            #+#    #+#             */
-/*   Updated: 2023/09/26 19:45:04 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/11 16:12:58 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_putchar_fd(char c, int fd)
 }
 
 // #include <fcntl.h>
+// #include <sys/stat.h>
 // int	main(void)
 // {
 // 	ft_putchar_fd('a', 1);

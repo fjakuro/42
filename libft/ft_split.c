@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 12:51:00 by yiwama            #+#    #+#             */
-/*   Updated: 2023/10/04 11:06:09 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/11 15:58:06 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	**ft_split(char const *s, char c)
 {
 	char	**splitted;	
 
+	if (!s)
+		return (NULL);
 	splitted = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!splitted)
 		return (NULL);
@@ -109,15 +111,28 @@ static char	**set_splitted(char **splitted, char const *str, char c)
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	char	*str = "  These are  splitted   words";
-// 	char	**splitted = ft_split(str, ' ');
-// 	for (int i = 0; splitted[i]; i++)
+// 	char	*str0 = "  These are  splitted   words";
+// 	char	**splitted0 = ft_split(str0, ' ');
+// 	for (int i = 0; splitted0[i]; i++)
 // 	{
-// 		printf("%s, ", splitted[i]);
-// 		free(splitted[i]);
+// 		printf("%s, ", splitted0[i]);
+// 		free(splitted0[i]);
 // 	}
 // 	printf("\n");
-// 	free(splitted);
+// 	free(splitted0);
+
+// 	char	*str1 = "  These are  splitted   words";
+// 	char	**splitted1 = ft_split(str1, '\0');
+// 	for (int i = 0; splitted1[i]; i++)
+// 	{
+// 		printf("%s, ", splitted1[i]);
+// 		free(splitted1[i]);
+// 	}
+// 	printf("\n");
+// 	free(splitted1);
+
+// 	char	**splitted2 = ft_split(NULL, ' ');
+// 	printf("%p\n", splitted2);
 
 // 	system("leaks -q a.out");
 // }

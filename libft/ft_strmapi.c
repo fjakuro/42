@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 16:32:44 by yiwama            #+#    #+#             */
-/*   Updated: 2023/09/26 17:09:59 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/11 16:03:25 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*mapped;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	mapped = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!mapped)
 		return (NULL);
@@ -31,7 +33,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 }
 
 // #include <stdio.h>
-// static int (*f)(int) = NULL;
+// static int (*f)(int);
 // static char func(unsigned int i, char c)
 // {
 // 	(void)i;

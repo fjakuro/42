@@ -12,21 +12,23 @@
 
 #include <stddef.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	size_t			i;
 	unsigned char	*d;
 	unsigned char	*s;
 
+	if (!dst && !src)
+		return (NULL);
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
 		if (d <= s)
 			d[i] = s[i];
 		else
-			d[len - i - 1] = s[len - i - 1];
+			d[n - 1 - i] = s[n - 1 - i];
 		i++;
 	}
 	return (dst);
@@ -45,19 +47,23 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 // 	ft_memmove(dst0_ft, src0_ft, 5);
 // 	printf("%s\n", dst0_ft);
 
-// 	// char	dst1[] = "abcdef";
-// 	// memmove(&dst1[2], dst1, 4);
-// 	// printf("%s\n", dst1);
+// 	char	dst1[] = "abcdef";
+// 	memmove(&dst1[2], dst1, 4);
+// 	printf("%s\n", dst1);
 // 	char	dst1_ft[] = "abcdef";
 // 	ft_memmove(&dst1_ft[2], dst1_ft, 4);
 // 	printf("%s\n", dst1_ft);
 
-// 	// char	*dst2 = "abcde";
-// 	// char	*src2 = NULL;
-// 	// memmove(dst2, src2, 5);
-// 	// printf("%s\n", dst2);
-// 	char	*dst2_ft = "abcde";
+// 	// char	*dst2 = "abcdef";
+// 	// char	*dst2_ft = "abcdef";
+// 	char	*dst2 = NULL;
+// 	char	*dst2_ft = NULL;
+// 	// char	*src2 = "01234";
+// 	// char	*src2_ft = "01234";
+// 	char	*src2 = NULL;
 // 	char	*src2_ft = NULL;
-// 	ft_memmove(dst2_ft, src2_ft, 5);
-// 	printf("%s\n", dst2_ft);
+// 	memmove(dst2, src2, 5);
+// 	printf("%s\n", dst2);
+// 	// ft_memmove(dst2_ft, src2_ft, 5);
+// 	// printf("%s\n", dst2_ft);
 // }

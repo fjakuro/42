@@ -1,41 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 17:20:06 by yiwama            #+#    #+#             */
-/*   Updated: 2023/10/12 17:20:06 by yiwama           ###   ########.fr       */
+/*   Created: 2023/11/11 21:38:07 by yiwama            #+#    #+#             */
+/*   Updated: 2023/11/11 21:38:07 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (lst)
 	{
-		while (lst->next)
+		while (lst && f)
+		{
+			f(lst->content);
 			lst = lst->next;
+		}
 	}
-	return (lst);
 }
 
 // #include <stdio.h>
+// void	func(void *p)
+// {
+// 	size_t	i = 0;
+// 	char	*str = (char *)p;
+
+// 	while (str[i])
+// 	{
+// 		str[i] += 1;
+// 		i++;
+// 	}
+// }
+
 // int	main(void)
 // {
-// 	t_list	*lst0 = ft_lstnew("abcde");
-// 	t_list	*add0 = ft_lstnew("ABCDE");
-// 	ft_lstadd_front(&lst0, add0);
-// 	printf("%s\n", (char *)ft_lstlast(lst0)->content);
-// 	free(lst0->next);
-// 	free(lst0);
-
-// 	t_list	*lst1 = ft_lstnew("abcde");
-// 	printf("%s\n", (char *)ft_lstlast(lst1)->content);
-// 	free(lst1);
-
-// 	t_list	*lst2 = NULL;
-// 	printf("%p\n", (char *)ft_lstlast(lst2));
+// 	t_list	*lst0 = ft_lstnew(ft_strdup("abcde"));
+// 	ft_lstadd_back(&lst0, ft_lstnew(ft_strdup("ABCDE")));
+// 	ft_lstiter(lst0, func);
+// 	printf("%s, %s\n", (char *)lst0->content, (char *)lst0->next->content);
 // }
