@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 14:55:19 by yiwama            #+#    #+#             */
-/*   Updated: 2023/09/26 16:30:44 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/17 20:16:41 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static char	*convert_rec(int n, char *str)
 {
 	int		div;
 
-	if (n == -2147483648)
+	if (n == INT_MIN)
 	{
 		convert_rec(n / 10, str);
 		return (charcat(str, n % 10 * -1 + '0'));
