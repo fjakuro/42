@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:06:23 by yiwama            #+#    #+#             */
-/*   Updated: 2023/11/03 21:14:53 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/18 15:56:55 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // 	printf("%s\n", ft_strnstr(str0, "def", 20));
 
 // 	printf("%s\n", strnstr(str0, "def", 5));
-// 	printf("%p\n", ft_strnstr(str0, "def", 5));
+// 	printf("%s\n", ft_strnstr(str0, "def", 5));
 
 // 	printf("%s\n", strnstr(str0, "def", -1));
-// 	printf("%s\n", ft_strnstr(str0, "ddef", -1));
+// 	printf("%s\n", ft_strnstr(str0, "def", -1));
 
 // 	char	str1[] = "abcddef";
 // 	printf("%s\n", strnstr(str1, "def", 20));
@@ -60,5 +60,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 // 	char	*str2 = NULL;
 // 	printf("%s\n", strnstr(str2, "def", 0));
-// 	printf("%p\n", ft_strnstr(str2, "def", 0));
+// 	printf("%s\n", ft_strnstr(str2, "def", 0));
 // }

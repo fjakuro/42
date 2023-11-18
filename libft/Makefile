@@ -12,9 +12,9 @@ BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_b
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-# ifdef WITH_BONUS
+ifdef WITH_BONUS
 OBJS += $(BONUS_OBJS)
-# endif
+endif
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -40,6 +40,6 @@ re: fclean all
 bonus:
 	make re WITH_BONUS=1
 
-so:
-	cc -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+# so:
+# 	# cc -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+# 	# gcc -nostartfiles -shared -o libft.so $(OBJS)

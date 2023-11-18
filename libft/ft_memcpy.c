@@ -44,23 +44,25 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 // 	ft_memcpy(dst0_ft, src0_ft, 5);
 // 	printf("%s\n", dst0_ft);
 
-// 	// char	dst1[] = "abcdef";
-// 	// memcpy(&dst1[2], dst1, 4);
-// 	// printf("%s\n", dst1);
-// 	// char	dst1_ft[] = "abcdef";
-// 	// ft_memcpy(&dst1_ft[2], dst1_ft, 4);
-// 	// printf("%s\n", dst1_ft);
+// 	char	dst1[] = "abcdef";
+// 	memcpy(&dst1[2], dst1, 4);
+// 	memcpy(dst1, &dst1[2], 4);
+// 	printf("%s\n", dst1);
+// 	char	dst1_ft[] = "abcdef";
+// 	ft_memcpy(&dst1_ft[2], dst1_ft, 4);
+// 	ft_memcpy(dst1_ft, &dst1_ft[2], 4);
+// 	printf("%s\n", dst1_ft);
 
-	// // char	*dst2 = "abcdef";
-	// // char	*dst2_ft = "abcdef";
-	// char	*dst2 = NULL;
-	// char	*dst2_ft = NULL;
-	// // char	*src2 = "01234";
-	// // char	*src2_ft = "01234";
-	// char	*src2 = NULL;
-	// char	*src2_ft = NULL;
-	// memcpy(dst2, src2, 5);
-	// printf("%s\n", dst2);
-	// // ft_memcpy(dst2_ft, src2_ft, 5);
-	// // printf("%s\n", dst2_ft);
+// 	// char	*dst2 = "abcdef";
+// 	// char	*dst2_ft = "abcdef";
+// 	char	*dst2 = NULL;
+// 	char	*dst2_ft = NULL;
+// 	// char	*src2 = "01234";
+// 	// char	*src2_ft = "01234";
+// 	char	*src2 = NULL;
+// 	char	*src2_ft = NULL;
+// 	memcpy(dst2, src2, 5);
+// 	printf("%s\n", dst2);
+// 	ft_memcpy(dst2_ft, src2_ft, 5);
+// 	printf("%s\n", dst2_ft);
 // }

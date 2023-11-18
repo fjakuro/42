@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:20:05 by yiwama            #+#    #+#             */
-/*   Updated: 2023/11/12 00:22:59 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/18 17:36:07 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			alloc_size;
 
 	if (count && size > SIZE_MAX / count)
-		alloc_size = SIZE_MAX;
+		return (0);
 	else
 		alloc_size = count * size;
 	p = (unsigned char *)malloc(alloc_size);
@@ -31,8 +31,6 @@ void	*ft_calloc(size_t count, size_t size)
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	printf("%zu\n", SIZE_MAX);
-
 // 	int	*str0;
 // 	str0 = (int *)calloc(5, sizeof(int));
 // 	for (int i = 0; i < 1; i++)
@@ -54,33 +52,27 @@ void	*ft_calloc(size_t count, size_t size)
 
 // 	int	*str1;
 // 	str1 = (int *)calloc(0, 0);
-// 	for (int i = 0; i < 1; i++)
-// 		printf("%p", &str1[i]);
+// 	printf("%p", &str1[0]);
 // 	printf(": ");
-// 	for (int i = 0; i < 1; i++)
-// 		printf("%d", str1[i]);
+// 	printf("%d", str1[0]);
 // 	printf("\n");
 // 	free(str1);
 // 	int	*str1_ft;
 // 	str1_ft = (int *)ft_calloc(0, 0);
-// 	for (int i = 0; i < 1; i++)
-// 		printf("%p", &str1_ft[i]);
+// 	printf("%p", &str1_ft[0]);
 // 	printf(": ");
-// 	for (int i = 0; i < 1; i++)
-// 		printf("%d", str1_ft[i]);
+// 	printf("%d", str1_ft[0]);
 // 	printf("\n");
 // 	free(str1_ft);
 
 // 	int	*str2;
-// 	str2 = (int *)calloc(INT_MAX, 10);
-// 	for (int i = 0; i < 1; i++)
-// 		printf("%p", &str2[i]);
-// 	printf("\n");
+// 	str2 = (int *)calloc(SIZE_MAX, 10);
+// 	printf("%p\n", &str2[0]);
 // 	free(str2);
 // 	int	*str2_ft;
-// 	str2_ft = (int *)ft_calloc(INT_MAX, 10);
-// 	for (int i = 0; i < 1; i++)
-// 		printf("%p", &str2_ft[i]);
-// 	printf("\n");
+// 	str2_ft = (int *)ft_calloc(SIZE_MAX, 10);
+// 	printf("%p\n", &str2_ft[0]);
 // 	free(str2_ft);
+
+// 	// system("leaks -q a.out");
 // }

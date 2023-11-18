@@ -48,10 +48,12 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 // 	printf("%s\n", dst0_ft);
 
 // 	char	dst1[] = "abcdef";
-// 	memmove(&dst1[2], dst1, 4);
+// 	// memmove(&dst1[2], dst1, 4);
+// 	memmove(dst1, &dst1[2], 4);
 // 	printf("%s\n", dst1);
 // 	char	dst1_ft[] = "abcdef";
-// 	ft_memmove(&dst1_ft[2], dst1_ft, 4);
+// 	// ft_memmove(&dst1_ft[2], dst1_ft, 4);
+// 	ft_memmove(dst1_ft, &dst1_ft[2], 4);
 // 	printf("%s\n", dst1_ft);
 
 // 	// char	*dst2 = "abcdef";
@@ -64,6 +66,6 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 // 	char	*src2_ft = NULL;
 // 	memmove(dst2, src2, 5);
 // 	printf("%s\n", dst2);
-// 	// ft_memmove(dst2_ft, src2_ft, 5);
-// 	// printf("%s\n", dst2_ft);
+// 	ft_memmove(dst2_ft, src2_ft, 5);
+// 	printf("%s\n", dst2_ft);
 // }

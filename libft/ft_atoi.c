@@ -6,15 +6,20 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:36:45 by yiwama            #+#    #+#             */
-/*   Updated: 2023/11/03 21:16:50 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/18 14:47:00 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
+
+#include <stdio.h>
+
+static int	ft_atoi2(const char *str, int sign, int head);
+
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	result;
+	int		i;
+	int		sign;
 
 	i = 0;
 	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
@@ -26,13 +31,29 @@ int	ft_atoi(const char *str)
 			sign *= -1;
 		i++;
 	}
+	return (ft_atoi2(str, sign, i));
+}
+
+static int	ft_atoi2(const char *str, int sign, int head)
+{
+	int		i;
+	long	result;
+
 	result = 0;
+	i = head;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result = result * 10 + (str[i] - '0');
+		if (sign == 1 
+			&& (result > LONG_MAX / 10 || result * 10 > LONG_MAX - (str[i] - '0')))
+			return ((int)LONG_MAX);
+		else if (sign == -1 && (result * -1 < LONG_MIN / 10 
+				|| result * 10 * -1 < LONG_MIN + (str[i] - '0')))
+				return ((int)LONG_MIN);
+		else
+			result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	return (sign * result);
+	return ((int)(sign * result));
 }
 
 // #include <stdio.h>
@@ -47,4 +68,12 @@ int	ft_atoi(const char *str)
 
 // 	printf("%d\n", atoi("1000000000000000000"));
 // 	printf("%d\n", ft_atoi("1000000000000000000"));
+
+// 	printf("%d\n", atoi("9223372036854775807"));
+// 	printf("%d\n", ft_atoi("9223372036854775807"));
+
+// 	printf("%d\n", atoi("-9223372036854775809"));
+// 	printf("%d\n", ft_atoi("-9223372036854775809"));
+
+// 	printf("%d\n", (int)LONG_MIN);
 // }
