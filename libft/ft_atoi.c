@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:36:45 by yiwama            #+#    #+#             */
-/*   Updated: 2023/11/18 14:47:00 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/23 21:19:19 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ static int	ft_atoi2(const char *str, int sign, int head)
 	i = head;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (sign == 1 
-			&& (result > LONG_MAX / 10 || result * 10 > LONG_MAX - (str[i] - '0')))
+		if (sign == 1 && (result > LONG_MAX / 10
+				|| result * 10 > LONG_MAX - (str[i] - '0')))
 			return ((int)LONG_MAX);
-		else if (sign == -1 && (result * -1 < LONG_MIN / 10 
+		else if (sign == -1 && (result * -1 < LONG_MIN / 10
 				|| result * 10 * -1 < LONG_MIN + (str[i] - '0')))
-				return ((int)LONG_MIN);
+			return ((int)LONG_MIN);
 		else
 			result = result * 10 + (str[i] - '0');
 		i++;
