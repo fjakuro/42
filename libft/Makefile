@@ -22,7 +22,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
-	cc -c $(CFLAGS) $< -o $@
+	cc $(CFLAGS) $< -o $@
 
 .PHONY: all clean fclean re bonus
 

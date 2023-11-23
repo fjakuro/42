@@ -6,7 +6,7 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 12:06:05 by yiwama            #+#    #+#             */
-/*   Updated: 2023/11/11 15:58:26 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/23 20:24:33 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	head;
 	size_t	tail;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
 	head = 0;
 	tail = ft_strlen(s1);
