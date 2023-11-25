@@ -13,7 +13,7 @@ OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 ifdef WITH_BONUS
-OBJS += $(BONUS_OBJS)
+	OBJS += $(BONUS_OBJS)
 endif
 
 CFLAGS = -Wall -Wextra -Werror
@@ -38,4 +38,4 @@ fclean: clean
 re: fclean all
 
 bonus:
-	make re WITH_BONUS=1
+	make WITH_BONUS=1
