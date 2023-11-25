@@ -6,13 +6,11 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:36:45 by yiwama            #+#    #+#             */
-/*   Updated: 2023/11/23 21:19:19 by yiwama           ###   ########.fr       */
+/*   Updated: 2023/11/25 11:11:44 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
-
-#include <stdio.h>
 
 static int	ft_atoi2(const char *str, int sign, int head);
 

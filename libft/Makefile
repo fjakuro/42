@@ -22,7 +22,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
-	cc $(CFLAGS) $< -o $@
+	cc $(CFLAGS) -c $< -o $@
 
 .PHONY: all clean fclean re bonus
 
@@ -39,7 +39,3 @@ re: fclean all
 
 bonus:
 	make re WITH_BONUS=1
-
-# so:
-# 	# cc -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-# 	# gcc -nostartfiles -shared -o libft.so $(OBJS)
