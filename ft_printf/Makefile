@@ -6,6 +6,7 @@ OBJS = $(SRCS:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 
 $(NAME): $(OBJS)
+	make -C ./libft
 	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
@@ -23,6 +24,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-bonus:
-	make re WITH_BONUS=1

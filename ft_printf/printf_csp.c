@@ -6,14 +6,9 @@
 /*   By: yiwama <yiwama@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 15:09:26 by yiwama            #+#    #+#             */
-/*   Updated: 2023/11/28 19:26:25 by yiwama           ###   ########.fr       */
+/*   Updated: 2024/01/10 12:52:26 by yiwama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdarg.h>
-#include <unistd.h>
-
-#include <string.h>
 
 int	printf_c(va_list args)
 {
@@ -31,23 +26,23 @@ int	printf_s(va_list args)
 	int		len;
 
 	str = va_arg(args, char *);
-	// len = ft_strlen(str);
-	len = strlen(str);
+	len = ft_strlen(str);
+	// len = strlen(str);
 	// if (write(1, &str, strlen(str)))
-	if (write(1, str, strlen(str)) == -1)
+	if (write(1, str, ft_strlen(str)) == -1)
 		return (-1);
 	return (len);
 }
 
-int printf_p(va_list args)
-{
-	long 	p;
-	int		len;
+// int printf_p(va_list args)
+// {
+// 	long 	p;
+// 	int		len;
 
-	len = 0;
-	p = va_arg(args, long);
-	return (len);
-}
+// 	len = 0;
+// 	p = va_arg(args, long);
+// 	return (len);
+// }
 
 int	printf_percent(void)
 {
